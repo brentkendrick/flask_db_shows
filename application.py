@@ -51,6 +51,7 @@ def search():
         # shows = db.execute("SELECT * FROM shows WHERE title LIKE ?", "%" + q + "%")
         srch = "%{}%".format(q)
         shows = Shows.query.filter(Shows.title.like(srch)).all()
+        shows = [show.__repr__() for show in shows]
     else:
         shows = []
     return shows
