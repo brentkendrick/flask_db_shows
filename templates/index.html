@@ -18,10 +18,10 @@
     <script>
       let input = document.querySelector('input');
       input.addEventListener('keyup', function () {
-        $.get('/search?q=' + input.value, function (Shows) {
+        $.get('/search?q=' + input.value, function (shows) {
           let html = '';
-          for (let id in Shows) {
-            let title = Shows[id].title;
+          for (let id in shows) {
+            let title = shows[id].title;
             html += '<li>' + title + '</li>';
           }
           document.querySelector('ul').innerHTML = html;
